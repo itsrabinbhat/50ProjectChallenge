@@ -1,0 +1,73 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The impossible button</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-overflow: ellipsis;
+        background-color: #576574;
+      }
+      #btn {
+        padding: 1.5rem 4rem;
+        background-color: #1dd1a1;
+        border: none;
+        box-shadow: 0px 0px 5px #576574;
+        position: absolute;
+        left: auto;
+        top: auto;
+        color: #f5f5f5;
+        font-family: poppins;
+        font-size: 18px;
+      }
+
+      #btn:hover{
+          background-color: #feca57;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">Catch Me</button>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.0.1/math.js"
+      integrity="sha512-+OuArDTnKpVrU9j/ZLZvhCUWdHifkOrjGhbZeqaZbSnHlcQpAAGMCLVSLqjcNAfZX308M6tTo6NdxNnVb4P36Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script>
+      const btn = document.getElementById("btn");
+
+      const moveBtn = ()=>{
+        const height = math.floor(math.random() * window.innerHeight);
+        const width = math.floor(math.random() * window.innerWidth);
+        btn.style.cssText = `
+        left: ${width}px;
+        top: ${height}px;
+        `;
+      };
+
+      btn.addEventListener("mouseover", () => {
+        setTimeout(()=>{
+            moveBtn();
+        },100);
+      });
+
+      btn.addEventListener("click", () => {
+        btn.style.cssText = `
+            background-color: ##ff6b6b;
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            `;
+        btn.innerText = `You Caught Me!`;
+      });
+    </script>
+  </body>
+</html>
