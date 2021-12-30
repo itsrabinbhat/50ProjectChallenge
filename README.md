@@ -1,3 +1,2 @@
 # 50ProjectChallenge
 This is 50 Days 50 Projects Challenge...
-./Day 2/index.html
