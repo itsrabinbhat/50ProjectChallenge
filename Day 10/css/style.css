@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --active-color : #1dd1a1;
+    --empty-color : #e0e0e0;
+}
+
+body{
+    background-color: var(--active-color);
+    font-family: 'Muli', poppins;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.container{
+    background-color: var(--empty-color);
+    max-width: 80vw;
+    width: 600px;
+    padding: 20px 30px;
+    border-radius: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.container h3{
+    opacity: 0.5;
+    letter-spacing: 1.5px;
+}
+
+.joke{
+    margin: 2rem 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.btn{
+    background-color: var(--active-color);
+    border: none;
+    border-radius: 5px;
+    padding: 1.5rem 3rem;
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: none;
+}
