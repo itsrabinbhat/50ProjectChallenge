@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+body{
+    background-color: var(--primary-color);
+    font-family: "Muli",poppins;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container h2{
+    text-align: center;
+    margin: 2rem auto;
+}
+
+
+.box-container{
+    max-width: 90vw;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.empty{
+    height: 150px;
+    width: 150px;
+    background-color: #fff;
+    border: 3px solid #555;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fill{
+    background-image: url('https://source.unsplash.com/random/150x150');
+    height: 145px;
+    width: 145px;
+    cursor: pointer;
+}
+
+.hold{
+    border: 2px solid #999;
+}
+
+.hovered{
+    background-color: #555;
+    border: 3px dashed #fff;
+}
+
+@media(max-width: 600px){
+
+    .box-container{
+        flex-direction: column;
+    }
+}
