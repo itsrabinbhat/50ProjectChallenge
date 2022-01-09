@@ -56,29 +56,29 @@ function setTime() {
 
   hourNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(
     hourForClock,
-    1,
-    12,
+    0,
+    11,
     0,
     360
   )}deg)`;
 
   minNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(
     minute,
-    1,
-    60,
+    0,
+    59,
     0,
     360
   )}deg)`;
 
   secNeedle.style.transform = `translate(-50%, -100%) rotate(${scale(
     second,
-    1,
-    60,
+    0,
+    59,
     0,
     360
   )}deg)`;
 
-  timeEl.innerHTML = `${hourForClock}:${minute < 10 ? "0" + minute : minute}`;
+  timeEl.innerHTML = `${hourForClock === 0 ? 12 : hourForClock}:${minute < 10 ? "0" + minute : minute}`;
 
   dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${
     date < 10 ? "0" + date : date
