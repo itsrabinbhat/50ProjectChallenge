@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: "Muli",poppins;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 600px;
+    width: 100%;
+    margin: auto 3rem;
+}
+
+form input{
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1),0px 3px 6px rgba(0,0,0,0.1) ;
+}
+
+form input:focus{
+    outline: none;
+}
+
+form input::placeholder{
+    color: #aaa;
+}
+
+.card{
+    max-width: 100%;
+    background-color: #fff;
+    color: #333;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1),0px 3px 6px rgba(0,0,0,0.1) ;
+
+}
+
+
+.profile-img img{
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+}
+
+.user-info{
+    margin-left: 2rem;
+    max-width: 400px;
+}
+
+.user-info h3{
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.user-info p{
+    line-height: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.user-info ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.user-info ul li{
+    font-weight: bold;
+}
+
+#repos a{
+    text-decoration: none;
+    background-color: #f5f5f5;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem .5rem;
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-left: 0;
+}
+
+#repos{
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 600px){
+
+    .card{
+        flex-direction: column;
+        text-align: center;
+    }
+}
