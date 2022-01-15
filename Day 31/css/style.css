@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+body{
+    background-color: #333;
+    color: #fff;
+    font-family: "Muli",poppins;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    background-color: #444;
+    padding: 2rem;
+}
+
+.container h2{
+    text-align: center;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.result-container{
+    background-color: #333;
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 5px;
+}
+
+.result-container .result{
+    width: calc(100% - 40px);
+}
+
+.btn{
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+.result-container .btn{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 1.2rem;
+    width: 40PX;
+    height: 40PX;
+}
+
+.btn.btn-large{
+    width: 100%;
+    letter-spacing: 1px;
+}
+
+.settings{
+    margin: 1rem 0;
+}
+.setting{
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+#length:focus{
+    outline: none;
+
+}
+
+#length{
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+}
+
+input[type = "checkbox"] {
+    cursor: pointer;
+}
