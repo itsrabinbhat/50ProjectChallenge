@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: "Muli",poppins;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.toggle-container{
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+}
+
+.toggle{
+    visibility: hidden;
+}
+
+.toggle + label{
+    height: 30px;
+    width: 60px;
+    background-color: #999;
+    margin: 0 1rem 0;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggle:checked + label{
+    background-color: var(--primary-color);
+    transition: 0.3s ease;
+}
+
+.circle{
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 3px;
+    top: 3px;
+    animation: slideOff 0.3s linear forwards;
+}
+
+.toggle:checked + label .circle{
+    animation: slideOn 0.3s linear forwards;
+}
+
+
+@keyframes slideOn {
+    0%{
+        transform: translateX(0) scale(1);
+    }
+    50%{
+        transform: translateX(15px) scale(1.2);
+    }
+    100%{
+        transform: translateX(30px) scale(1);
+    }
+
+}
+@keyframes slideOff {
+    0%{
+        transform: translateX(30px) scale(1);
+    }
+    50%{
+        transform: translateX(15px) scale(1.2);
+    }
+    100%{
+        transform: translateX(0) scale(1);
+    }
+
+}
