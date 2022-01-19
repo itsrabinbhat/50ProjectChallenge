@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: "Muli",poppins;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 80vw;
+    height: 400px;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.carousel{
+    width: 80vw;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-container{
+    overflow: hidden;
+    display: inline-flex;
+    transform: translateX(0%);
+    transition: 0.5s ease-in-out;
+}
+
+.btn{
+    position: absolute;
+    top: 50%;
+    /* left: 50%; */
+    right: 0;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 100;
+    border: none;
+    background-color: rgba(0,0,0,0.8);
+    padding: 15px;
+    width: 50px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.btn#left{
+    left: 25px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.btn#right{
+    right: -25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn:active i{
+    transform: scale(0.98);
+}
+
+
+.carousel:hover .btn{
+    opacity: 1;
+}
+
