@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #1dd1a1;
+  --active-color: #2ecc71;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Muli", poppins;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #fff;
+  border: 1px solid #555;
+  border-radius: 5px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.container h3 {
+  margin: 10px 0;
+}
+
+.container p {
+  font-size: 14px;
+}
+
+.code-container {
+  margin: 1rem auto;
+}
+
+.code {
+  height: 50px;
+  width: 50px;
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+}
+
+.code:focus {
+  outline: none;
+}
+.code:valid {
+  border-color: var(--primary-color);
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2);
+}
+
+.code::-webkit-outer-spin-button,
+.code::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.btn {
+  display: block;
+  margin: 1rem auto;
+  border: none;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  width: 320px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.info{
+    font-size: 12px;
+    background-color: #f5f5f5;
+    padding: 5px;
+    border-radius: 5px;
+    color: #aaa;
+    display: inline-block;
+    width: 300px;
+}
+
+.msg{
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--active-color);
+}
