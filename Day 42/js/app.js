@@ -30,9 +30,8 @@ sendBtn.addEventListener('click', ()=>{
     setTimeout(()=>{
         container.style.transform = `rotateY(360deg)`
         container.style.transition = `none`
-    },300)
 
-    container.innerHTML = `
+        container.innerHTML = `
         <i class="fas fa-heart"></i>
         <strong>Thank You!</strong>
         <br>
@@ -40,6 +39,9 @@ sendBtn.addEventListener('click', ()=>{
         <p>We'll use your feedback to improve our website.</p>
 
     `
+    },320)
+
+    
 
     container.style.fontSize = `1rem`
     container.style.maxWidth = `300px`
