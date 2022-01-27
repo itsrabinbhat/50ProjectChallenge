@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+*{
+    box-sizing: border-box;
+}
+:root{
+    --primary-color : #1dd1a1;
+    --active-color : #2ecc71;
+
+}
+
+body{
+    background-color: #f5f5f5;
+    font-family: "Muli",poppins;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main{
+    text-align: center;
+}
+
+.logo{
+    width: 150px;
+}
+
+.nav-btn{
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav-open{
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+}
+
+.main p{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav.active{
+    transform: translateX(0);
+}
+
+.nav-black{
+    background-color: #333;
+    width: 60%;
+    transition-delay: 0.4s;
+}
+
+.nav-black.nav.active{
+    transition-delay: 0s;
+}
+
+.nav-red{
+    background-color: rgb(299, 24, 9);
+    width: 95%;
+    transition-delay: 0.2s;
+}
+
+.nav-red{
+    transition-delay: 0.2s;
+}
+
+.nav-white{
+    background-color: #fff;
+    width: 95%;
+    padding: 2rem;
+    position: relative;
+    transition-delay: 0s;
+}
+
+.nav-white.active{
+    transition-delay: 0.4s;
+}
+
+.nav-close{
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    color: #aaa;
+}
+
+.nav-list li{
+   list-style: none;
+   margin: 10px 0;
+   
+}
+
+.nav-list a{
+    text-decoration: none;
+    color: #333;
+    text-transform: uppercase;
+}
