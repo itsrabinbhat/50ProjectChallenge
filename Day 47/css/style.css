@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #1dd1a1;
+  --active-color: #2ecc71;
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: "Muli", poppins;
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+header h2 {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+header small {
+  display: block;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+}
+
+input[type="search"] {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  font-family: inherit;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="search"]::placeholder {
+  font-family: inherit;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+input[type="search"]:focus {
+  outline: none;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.container img {
+  width: 250;
+  height: 250px;
+  max-width: 300px;
+  max-height: 300px;
+  margin: 5px;
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 500px) {
+  .container img {
+    width: 470px;
+    height: 470px;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
