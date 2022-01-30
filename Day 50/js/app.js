@@ -8,7 +8,7 @@ const score = document.getElementById('score')
 const game_over = document.querySelector('.game-over')
 const restart_game = document.getElementById('reload')
 
-let second = 6
+let second = 60
 let current_score = 0
 let selected
 
