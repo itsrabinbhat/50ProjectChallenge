@@ -1,116 +1,117 @@
 // Script Goes Here...
-const screens = document.querySelectorAll('.screen')
-const start_btn = document.getElementById('btn-play')
-const insects = document.querySelectorAll('.choose-insect-btn')
-const game_container = document.getElementById('game')
-const time = document.getElementById('time')
-const score = document.getElementById('score')
-const game_over = document.querySelector('.game-over')
-const restart_game = document.getElementById('reload')
+const screens = document.querySelectorAll(".screen");
+const start_btn = document.getElementById("btn-play");
+const insects = document.querySelectorAll(".choose-insect-btn");
+const game_container = document.getElementById("game");
+const time = document.getElementById("time");
+const score = document.getElementById("score");
+const game_over = document.querySelector(".game-over");
 
-let second = 60
-let current_score = 0
-let selected
+let second = 0;
+let current_score = 0;
+let selected;
 
-start_btn.addEventListener('click', ()=>{
+start_btn.addEventListener("click", () => {
+  screens[0].classList.add("up");
+});
 
-    screens[0].classList.add('up')
-})
+insects.forEach((insect) => {
+  insect.addEventListener("click", () => {
+    const selected_img = insect.querySelector("img");
+    selected = selected_img.getAttribute("src");
 
-insects.forEach(insect => {
-    insect.addEventListener('click',()=>{
-        const selected_img = insect.querySelector('img')
-        selected = selected_img.getAttribute('src')
-        
-        screens[1].classList.add('up')
+    screens[1].classList.add("up");
 
-        setTimeout(()=>{
-            createInsect()
-        },1000)
+    // setTimeout(()=>{
+    //     createInsect()
+    // },1000)
 
-        startGame()
+    startGame();
+  });
+});
 
-    } )
-})
-
-function startGame(){
-    setInterval(increaseTime, 1000)
-}
-
-function increaseTime(){
-    let m = Math.floor(second / 60)
-    let s = second % 60
-
-    m = m < 10? `0${m}` : m;
-    s = s < 10? `0${s}` : s;
-
-    time.innerHTML = `Time: ${m}:${s}`
-
-    
-
-    if(second > 0){
-        second--
+function startGame() {
+  setInterval(() => {
+    const activeInsects = document.querySelectorAll(".insect")
+    if(activeInsects.length < 11){
+        increaseTime();
+    createInsect();
     }
-    else if(second === 0){
-        gameOver()
+
+    if (activeInsects.length >= 10) {
+      gameOver();
     }
+  }, 1000);
+  
 }
 
-function createInsect(){
-    
-    const insectEl = document.createElement('div')
-    insectEl.classList.add('insect')
+function increaseTime() {
+  let m = Math.floor(second / 60);
+  let s = second % 60;
 
-    const {x, y} = getLocation()
+  m = m < 10 ? `0${m}` : m;
+  s = s < 10 ? `0${s}` : s;
 
-    insectEl.style.left = `${x}px`
-    insectEl.style.top = `${y}px`
+  time.innerHTML = `Time: ${m}:${s}`;
 
-    insectEl.innerHTML = `
-        <img src="${selected}" style="transform: rotate(${Math.random() * 360}deg);">
-    `
-    game_container.appendChild(insectEl)
-
-    insectEl.addEventListener('click', ()=>{
-        insectEl.classList.add('caught')
-        updateScore()
-        addInsects()
-    })
+  second++;
 }
 
-function updateScore(){
-    current_score++
+function createInsect() {
+  const insectEl = document.createElement("div");
+  insectEl.classList.add("insect");
 
-    score.innerHTML = `Score: ${current_score}`
+  const { x, y } = getLocation();
+
+  insectEl.style.left = `${x}px`;
+  insectEl.style.top = `${y}px`;
+
+  insectEl.innerHTML = `
+        <img src="${selected}" style="transform: rotate(${
+    Math.random() * 360
+  }deg);">
+    `;
+  game_container.appendChild(insectEl);
+
+  insectEl.addEventListener('click', ()=>{
+      insectEl.classList.add('caught')
+      updateScore()
+      setTimeout(()=>{
+          insectEl.remove()
+      }, 10)
+  })
 }
 
-function addInsects(){
-    setTimeout(()=> createInsect(), 1000)
-    setTimeout(()=> createInsect(), 1500)
+function updateScore() {
+  current_score++;
+
+  score.innerHTML = `Score: ${current_score}`;
 }
 
-function getLocation(){
+// function addInsects(){
+//     setTimeout(()=> createInsect(), 1000)
+//     setTimeout(()=> createInsect(), 1500)
+// }
 
-    let box_width = game_container.offsetWidth
-    let box_height = game_container.offsetHeight
+function getLocation() {
+  let box_width = game_container.offsetWidth;
+  let box_height = game_container.offsetHeight;
 
-    let x = Math.random()* (box_width -200)+100 
-    let y = Math.random()* (box_height -200)+100 
+  let x = Math.random() * (box_width - 200) + 100;
+  let y = Math.random() * (box_height - 200) + 100;
 
-    return{x, y}
+  return { x, y };
 }
 
-function gameOver(){
-    game_over.innerHTML = `
+
+function gameOver() {
+  game_over.innerHTML = `
     <h2>Game Over!</h2>
     <p>Your Score is ${current_score}</p>
     <button class="btn" id="reload" onclick="location.reload()">Play Again</button>
-    `
-    game_over.classList.add('active')
-    game_container.classList.add('over')
+    `;
+  game_over.classList.add("active");
+  game_container.classList.add("over");
 }
 
-restart_game.addEventListener('click', (e)=>{
-    
-    game_over.classList.remove('active')
-})
+//New Game over logic
