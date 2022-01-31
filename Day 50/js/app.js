@@ -32,17 +32,16 @@ insects.forEach((insect) => {
 
 function startGame() {
   setInterval(() => {
-    const activeInsects = document.querySelectorAll(".insect")
-    if(activeInsects.length < 11){
-        increaseTime();
-    createInsect();
+    const activeInsects = document.querySelectorAll(".insect");
+    if (activeInsects.length < 11) {
+      increaseTime();
+      createInsect();
     }
 
     if (activeInsects.length >= 10) {
-      gameOver();
+      gameOver(activeInsects);
     }
   }, 1000);
-  
 }
 
 function increaseTime() {
@@ -73,13 +72,13 @@ function createInsect() {
     `;
   game_container.appendChild(insectEl);
 
-  insectEl.addEventListener('click', ()=>{
-      insectEl.classList.add('caught')
-      updateScore()
-      setTimeout(()=>{
-          insectEl.remove()
-      }, 10)
-  })
+  insectEl.addEventListener("click", () => {
+    insectEl.classList.add("caught");
+    updateScore();
+    setTimeout(() => {
+      insectEl.remove();
+    }, 300);
+  });
 }
 
 function updateScore() {
@@ -103,8 +102,7 @@ function getLocation() {
   return { x, y };
 }
 
-
-function gameOver() {
+function gameOver(activeInsects) {
   game_over.innerHTML = `
     <h2>Game Over!</h2>
     <p>Your Score is ${current_score}</p>
@@ -112,6 +110,12 @@ function gameOver() {
     `;
   game_over.classList.add("active");
   game_container.classList.add("over");
-}
 
-//New Game over logic
+  const restart_btn = document.getElementById("reload");
+
+  // restart_btn.addEventListener("click", () => {
+  //   game_container.classList.remove("over");
+  //   game_over.classList.remove("active");
+  //   screens[1].classList.remove("up");
+  // });
+}
